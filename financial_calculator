@@ -1,0 +1,67 @@
+# Program for two financial calculators.
+# Imported needed library 
+# Assigned boolean values to for statements
+# The user is asked to choose between investment or bond.
+
+import math
+
+investment = True
+bond = True
+simple_int = True
+compound_int = True
+
+print("Choose either 'investment' or 'bond' from the menu below to proceed:")
+print('''Investment\t-\tto calculate the amount of interest you'll earn on 
+                        your investment.''')
+print("Bond\t\t-\tto calculate the amount you'll have to pay on a home loan.")
+type_check = input()
+
+# Conditional statements that determine if the user is calculating investment or bond.
+if (type_check == "investment" or type_check == "INVESTMENT" or 
+    type_check == "Investment"):
+    investment = False
+elif (type_check == "bond" or type_check == "BOND" or 
+    type_check == "Bond"):
+    bond = False
+else:
+    print("Please provide type.")
+
+# Conditional statements regarding investments and bonds.
+# Questions to user to determine constants in calculations.
+# User input used to calculate simple and compound interest.
+# User input used to calculate monthly installment on bond.
+if (investment == False):
+    p_inv = float(input("How much money are you depositing?\n"))
+    r_inv = float(input("Please provide the interest rate as a percentage.\n"))
+    t_inv = float(input("How many years are you planning on investing the money for?\n"))
+    interest = input("Would you like simple or compound interest?\n")
+
+    # Conditional statement to calculate the simple and compound interest respectively.
+    if (interest == "simple" or interest == "SIMPLE" or interest == "Simple"):
+        simple_int = False
+    elif(interest == "compound" or interest == "COMPOUND" or interest == "Compound"):
+        compound_int = False
+    else:
+        print("Please provide prefered type of interest.")
+
+    if(simple_int ==False):
+        simp_int = (p_inv*r_inv*t_inv)/100
+        total_simple_int = p_inv + simp_int
+        print(f'''If you deposit R{p_inv} at {r_inv}% simple interest, you will have 
+        R{total_simple_int} after {t_inv} years.''')
+    else:
+        total_comp_int = round(p_inv * (math.pow((1 + r_inv / 100), t_inv)),2)
+        print(f'''If you deposit R{p_inv} at {r_inv}% compound interest, you will have 
+        R{total_comp_int} after {t_inv} years.''')
+        
+elif (bond == False):
+    house_value = float(input("What is the present value of your house?"))
+    interest_rate = float(input("What is the interest rate of the repayment in percentage?"))
+    decimal_interest_rate = ((interest_rate/100)/12) 
+    months_to_repay = float(input("In how many months are you planning to repay the loan?"))
+    monthly_payment = round(((house_value*((decimal_interest_rate*(1+decimal_interest_rate)
+    **months_to_repay)))/(((1+decimal_interest_rate)**months_to_repay-1))),2)    # Struggled with formula in notes, used x=P*((i*((1+i)**n))/((1+i)**n-1)) as found at https://stackoverflow.com/questions/29804843/calculating-mortgage-interest-in-python
+    print(f'''Your monthly installment to repay you home loan at {interest_rate}% over 
+    {months_to_repay} months will be R{monthly_payment}''')
+else:
+    print("Please make sure you have spelled your chosen type correctly.")
