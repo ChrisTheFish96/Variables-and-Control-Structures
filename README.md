@@ -12,8 +12,6 @@ A program to act as a financial calculator
 The code can be copied into any code editor.
 Comments are available in the code to explain what each section does.
 
-The user would also need the text file inventory.txt in the same directory as the code in order to access it as the program runs.
-
 ## Usage
 As the program starts the user will be provided with the following menu from where they can choose to view different sections of the program.
 
