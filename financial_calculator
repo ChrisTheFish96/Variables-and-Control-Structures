@@ -55,10 +55,10 @@ if (investment == False):
         R{total_comp_int} after {t_inv} years.''')
         
 elif (bond == False):
-    house_value = float(input("What is the present value of your house?"))
-    interest_rate = float(input("What is the interest rate of the repayment in percentage?"))
+    house_value = float(input("What is the present value of your house?\n"))
+    interest_rate = float(input("What is the interest rate of the repayment in percentage?\n"))
     decimal_interest_rate = ((interest_rate/100)/12) 
-    months_to_repay = float(input("In how many months are you planning to repay the loan?"))
+    months_to_repay = float(input("In how many months are you planning to repay the loan?\n"))
     monthly_payment = round(((house_value*((decimal_interest_rate*(1+decimal_interest_rate)
     **months_to_repay)))/(((1+decimal_interest_rate)**months_to_repay-1))),2)    # Struggled with formula in notes, used x=P*((i*((1+i)**n))/((1+i)**n-1)) as found at https://stackoverflow.com/questions/29804843/calculating-mortgage-interest-in-python
     print(f'''Your monthly installment to repay you home loan at {interest_rate}% over 
