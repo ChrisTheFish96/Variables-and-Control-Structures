@@ -34,7 +34,7 @@ As the program starts the user will be provided with the following menu from whe
 * Bond
    * User is asked what the present value of their house is.
    * They are also asked to specify the interest rate of the repayment is.
-   * Also, the amount of months they plan on taking to repay the loan.
+   * Also, the number of months they plan on taking to repay the loan.
    * The bond calculation is then printed out.
    
    ![bond](https://user-images.githubusercontent.com/125367266/226482543-2d613e20-8b6b-4d92-a1ad-9596830187f4.JPG)
